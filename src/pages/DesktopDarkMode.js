@@ -1,5 +1,8 @@
 import { Button } from "@mui/material";
 import styled from "styled-components";
+import {useState, useEffect} from "react";
+import {API_BASE_URL} from "../utils/Constants";
+import axios from 'axios';
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -91,6 +94,57 @@ const DesktopDarkModeRoot = styled.div`
 `;
 
 const DesktopDarkMode = () => {
+
+  const [message, setMessage] = useState('')
+  const [customLinks, setCustomLinks] = useState([])
+  const [links, setLinks] = useState([])
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState({});
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`${API_BASE_URL}accounts/me`, {
+      headers: {
+        // Authorization: `Bearer ${localStorage.getItem('token')}`
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
+      }
+    })
+        .then(response => {
+          console.log("Me");
+          setMessage(response.data);
+          setLinks(response.data.profile.links)
+          //console.log(message);
+          console.log(links);
+        })
+        .catch(error => {
+          setError(error);
+          console.log(error);
+        });
+
+    axios.get(`${API_BASE_URL}links/custom-links`, {
+      headers: {
+        // Authorization: `Bearer ${localStorage.getItem('token')}`
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
+      }
+    })
+        .then(response => {
+          //console.log("Custom");
+          setCustomLinks(response.data.results);
+          console.log(customLinks);
+        })
+        .catch(error => {
+          setError(error);
+          console.log(error);
+        });
+  }, []);
+
+  function link2CustomLinks() {
+    console.log("link2CustomLinks");
+  }
+
   return (
     <DesktopDarkModeRoot>
       <Container>
