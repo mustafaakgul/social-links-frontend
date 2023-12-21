@@ -2,7 +2,7 @@ import React from 'react';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Navigate} from "react-router-dom";
-import {API_BASE_URL} from "../utils/constants";
+import {API_BASE_URL} from "../utils/Constants";
 
 export const Home = () => {
     const [message, setMessage] = useState('');

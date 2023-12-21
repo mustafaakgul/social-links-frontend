@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import {Navigate} from "react-router-dom";
 import {useState} from "react";
-import {API_BASE_URL} from "../utils/constants";
+import {API_BASE_URL} from "../utils/Constants";
 
 export const Login = () => {
     const [username, setUsername] = useState('');

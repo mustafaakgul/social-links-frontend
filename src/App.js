@@ -1,10 +1,15 @@
 import { useEffect } from "react";
 import {
+  BrowserRouter,
   Routes,
   Route,
   useNavigationType,
   useLocation,
 } from "react-router-dom";
+import {Login} from "./components/Login";
+import {Home} from "./components/Home";
+import {Logout} from './components/Logout';
+import Me from "./components/Me";
 import DesktopDarkMode from "./pages/DesktopDarkMode";
 
 function App() {
@@ -48,5 +53,17 @@ function App() {
       <Route path="/" element={<DesktopDarkMode />} />
     </Routes>
   );
+
+  // <BrowserRouter>
+  //   {/*<Me/>*/}
+  //   {/*<Navigation></Navigation>*/}
+  //   <Routes>
+  //     <Route path="/me" element={<Me/>}/>
+  //     <Route path="/" element={<Home/>}/>
+  //     <Route path="/login" element={<Login/>}/>
+  //     <Route path="/logout" element={<Logout/>}/>
+  //   </Routes>
+  // </BrowserRouter>
+
 }
 export default App;
