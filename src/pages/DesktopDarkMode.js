@@ -1,8 +1,9 @@
 import { Button } from "@mui/material";
 import styled from "styled-components";
-import {useState, useEffect} from "react";
-import {API_BASE_URL} from "../utils/Constants";
+import { useState, useEffect } from "react";
+import { API_BASE_URL } from "../utils/Constants";
 import axios from 'axios';
+import Grid from '@mui/material/Grid';
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -35,6 +36,11 @@ const SocialLinks = styled.div`
   justify-content: center;
   padding: var(--padding-5xl);
   gap: var(--gap-base);
+  overflow: scrool;
+`;
+const Overflow = styled.div`
+
+  overflow: scrool;
 `;
 const Link = styled.div`
   flex: 1;
@@ -80,7 +86,7 @@ const Container = styled.div`
 const DesktopDarkModeRoot = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 2400px;
   overflow: hidden;
   //background-color: black;
   background-image: url("/desktop--dark-mode@3x.png");
@@ -92,6 +98,7 @@ const DesktopDarkModeRoot = styled.div`
   color: var(--text-color-dark-mode);
   font-family: var(--text-md);
 `;
+
 
 const DesktopDarkMode = () => {
 
@@ -111,17 +118,17 @@ const DesktopDarkMode = () => {
         'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
       }
     })
-        .then(response => {
-          console.log("Me");
-          setMessage(response.data);
-          setLinks(response.data.profile.links)
-          //console.log(message);
-          console.log(links);
-        })
-        .catch(error => {
-          setError(error);
-          console.log(error);
-        });
+      .then(response => {
+        console.log("Me");
+        setMessage(response.data);
+        setLinks(response.data.profile.links)
+        //console.log(message);
+        console.log(links);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
 
     axios.get(`${API_BASE_URL}links/custom-links`, {
       headers: {
@@ -130,15 +137,15 @@ const DesktopDarkMode = () => {
         'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
       }
     })
-        .then(response => {
-          //console.log("Custom");
-          setCustomLinks(response.data.results);
-          console.log(customLinks);
-        })
-        .catch(error => {
-          setError(error);
-          console.log(error);
-        });
+      .then(response => {
+        //console.log("Custom");
+        setCustomLinks(response.data.results);
+        console.log(customLinks);
+      })
+      .catch(error => {
+        setError(error);
+        console.log(error);
+      });
   }, []);
 
   function link2CustomLinks() {
@@ -152,40 +159,94 @@ const DesktopDarkMode = () => {
           <AvatarIcon alt="" src="/themedark-mode.svg" />
           <Maykbrito>@maykbrito</Maykbrito>
         </Profile>
-        <SocialLinks>
+        
+        <SocialLinks sx={{ minHeight: '60vh', overflow: 'auto' }}>
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
           <SocialLinksIcon alt="" src="/social-links.svg" />
           <SocialLinksIcon alt="" src="/social-links1.svg" />
           <SocialLinksIcon alt="" src="/social-links2.svg" />
           <SocialLinksIcon alt="" src="/social-links3.svg" />
         </SocialLinks>
         <Links>
-          <Button1>
-            <Link>Inscreva-se no NLW</Link>
-          </Button1>
-          <Button1>
-            <Link>Baixe meu e-book</Link>
-          </Button1>
-          <Button2
-            color="secondary"
-            size="large"
-            target="_blank"
-            variant="outlined"
-            href="www.youtube.com"
-          >
-            Baixe meu e-book
-          </Button2>
-          <Button1>
-            <Link>Veja meu portfólio</Link>
-          </Button1>
-          <Button1>
-            <Link>Conheça o Explorer</Link>
-          </Button1>
-          <Button1>
-            <Link>Conheça o Explorer</Link>
-          </Button1>
-          <Button1>
-            <Link>Conheça o Explorer</Link>
-          </Button1>
+
+          <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+            <Grid item xs={7} sm={7} md={10} lg={12} >
+              <Button1>
+                <Link>Veja meu portfólio</Link>
+              </Button1>
+            </Grid>
+          </Grid>
         </Links>
       </Container>
     </DesktopDarkModeRoot>
