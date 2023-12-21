@@ -27,6 +27,7 @@ const SocialLinksIcon = styled.img`
   position: relative;
   width: 40px;
   height: 40px;
+  object-fit: cover;
 `;
 const SocialLinks = styled.div`
   align-self: stretch;
@@ -72,6 +73,7 @@ const Links = styled.div`
   padding: var(--padding-5xl);
   gap: var(--gap-base);
   text-align: center;
+  overflow-y: auto;
 `;
 const Container = styled.div`
   position: absolute;
@@ -86,7 +88,7 @@ const Container = styled.div`
 const DesktopDarkModeRoot = styled.div`
   position: relative;
   width: 100%;
-  height: 2400px;
+  height: 100vh;
   overflow: hidden;
   //background-color: black;
   background-image: url("/desktop--dark-mode@3x.png");
@@ -167,16 +169,7 @@ const DesktopDarkMode = () => {
           <SocialLinksIcon alt="" src="/social-links3.svg" />
           <SocialLinksIcon alt="" src="/social-links.svg" />
           <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
+         
         </SocialLinks>
         <Links>
 
