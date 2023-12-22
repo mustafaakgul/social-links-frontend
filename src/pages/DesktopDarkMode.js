@@ -112,16 +112,14 @@ const DesktopDarkMode = () => {
     setLoading(true);
     axios.get(`${API_BASE_URL}accounts/me`, {
       headers: {
-        // Authorization: `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
         'Content-Type': 'application/json',
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
       }
     })
       .then(response => {
-        console.log("Me");
         setMessage(response.data);
         setLinks(response.data.profile.links)
-        //console.log(message);
+        console.log(response.data);
         console.log(links);
       })
       .catch(error => {
@@ -131,13 +129,12 @@ const DesktopDarkMode = () => {
 
     axios.get(`${API_BASE_URL}links/custom-links`, {
       headers: {
-        // Authorization: `Bearer ${localStorage.getItem('token')}`
+        'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
         'Content-Type': 'application/json',
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAzMTkyMDYyLCJpYXQiOjE3MDMxMDU2NjIsImp0aSI6ImFjNWI5ZjY4NDE1MzQ0Y2FhYTM1ZmY1OTQwZTYwZmY3IiwidXNlcl9pZCI6MX0.bP2U9JfAXSz6_QfNrjnjbnpI2k3GpDoRjoYInZPfRVg`
       }
     })
       .then(response => {
-        //console.log("Custom");
+        console.log(response.data);
         setCustomLinks(response.data.results);
         console.log(customLinks);
       })

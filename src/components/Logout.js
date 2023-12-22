@@ -24,9 +24,9 @@ export const Logout = () => {
                 console.log('logout', data)
                 localStorage.clear();
                 // axios.defaults.headers.common['Authorization'] = null;
-                // window.location.href = '/login'
+                window.location.href = '/login'
             } catch (e) {
-                console.log('logout not working')
+                console.log('We are sorry, something went wrong.')
             }
         })();
     }, []);

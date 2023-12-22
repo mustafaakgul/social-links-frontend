@@ -22,7 +22,7 @@ export const Home = () => {
 
                     setMessage(data.first_name);
                 } catch (e) {
-                    console.log('Not Auth')
+                    console.log('We are sorry, something went wrong.')
                 }
             })()
         }
