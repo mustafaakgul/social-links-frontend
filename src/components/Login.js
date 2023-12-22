@@ -10,7 +10,6 @@ export const Login = () => {
 
     const submit = async e => {
         e.preventDefault();
-        console.log("here")
 
         const user = {
             username: username,
@@ -21,12 +20,11 @@ export const Login = () => {
                 'Content-Type': 'application/json'
             }}, {withCredentials: true});
 
-        console.log(data)
         localStorage.clear();
         localStorage.setItem('access_token', data.access);
         localStorage.setItem('refresh_token', data.refresh);
         axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
-        //window.location.href = '/'
+        window.location.href = '/'
 
     }
 

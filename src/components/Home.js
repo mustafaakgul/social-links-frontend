@@ -13,19 +13,16 @@ export const Home = () => {
         } else {
             (async () => {
                 try {
-                    console.log(localStorage.getItem('access_token'));
-                    const {data} = await axios.get(API_BASE_URL + 'account/me', {
+                    const {data} = await axios.get(API_BASE_URL + 'accounts/me', {
                         headers: {
                             'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
                             'Content-Type': 'application/json',
                         },
                     });
 
-                    console.log(data);
-
                     setMessage(data.first_name);
                 } catch (e) {
-                    console.log('not auth')
+                    console.log('Not Auth')
                 }
             })()
         }
