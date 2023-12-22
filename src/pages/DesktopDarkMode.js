@@ -144,16 +144,13 @@ const DesktopDarkMode = () => {
       });
   }, []);
 
-  function link2CustomLinks() {
-    console.log("link2CustomLinks");
-  }
-
   return (
     <DesktopDarkModeRoot>
       <Container>
         <Profile>
           <AvatarIcon alt="" src="/themedark-mode.svg" />
-          <Maykbrito>@maykbrito</Maykbrito>
+          <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
+          <Maykbrito>Description</Maykbrito>
         </Profile>
         
         <SocialLinks>
@@ -180,69 +177,18 @@ const DesktopDarkMode = () => {
           <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
             <Grid item xs={7} sm={7} md={10} lg={12} >
               <Button1>
-                <Link>Veja meu portfólio</Link>
+                <Link>Veja meu</Link>
               </Button1>
             </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu portfólio</Link>
-              </Button1>
-            </Grid>
+
+            {customLinks.map((customLink) => (
+                <Grid item xs={7} sm={7} md={10} lg={12} >
+                  <Button1>
+                    <Link>{customLink.title}</Link>
+                  </Button1>
+                </Grid>
+            ))}
+
           </Grid>
         </Links>
       </Container>
