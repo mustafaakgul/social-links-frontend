@@ -39,6 +39,7 @@ const SocialLinks = styled.div`
   padding: var(--padding-5xl);
   gap: var(--gap-base);
   overflow: auto;
+  height: 300px;
 `;
 const Link = styled.div`
   flex: 1;
@@ -58,18 +59,7 @@ const Button3 = styled.div`
   justify-content: center;
   padding: var(--padding-base) var(--padding-5xl);
 `;
-const myCustomButton = styled.div`
-  align-self: stretch;
-  border-radius: var(--br-5xs);
-  background-color: var(--surface-color-dark-mode);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--stroke-color-dark-mode);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) var(--padding-5xl);
-`;
+
 const Button2 = styled(Button)`
   align-self: stretch;
 `;
@@ -93,17 +83,18 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  overflow-y: scroll;
+  height: 100vh;
 `;
 const DesktopDarkModeRoot = styled.div`
-  //position: relative;
+  position: relative;
   width: 100%;
   height: 100vh;
-  //overflow: hidden;
-  //background-color: black;
+  overflow: hidden;
   background-image: url("/desktop--dark-mode@3x.png");
   background-size: cover;
-  //background-repeat: no-repeat;
- // background-position: top;
+  background-repeat: no-repeat;
+  background-position: top;
   text-align: left;
   font-size: var(--text-md-size);
   color: var(--text-color-dark-mode);
@@ -195,10 +186,121 @@ const DesktopDarkMode = () => {
                    paddingBottom:2,
                    paddingTop:2, 
                    borderRadius: 2,
+                   overflow: 'hidden',
                    backgroundColor:"rgba(255,255,255,0.1)" }} 
                    fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit">
+                   variant="outlined" size="large" color="inherit" >
                     {customLink.title}
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
+                    </Button>
+                    <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   overflow: 'hidden',
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href={`${customLink.url}`} target="_blank"
+                   variant="outlined" size="large" color="inherit" >
+                    ksajhdjhsjdhjshd
                     </Button>
                   </Grid>
                 </Grid>
