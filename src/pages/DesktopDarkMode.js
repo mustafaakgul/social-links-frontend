@@ -39,7 +39,6 @@ const SocialLinks = styled.div`
   padding: var(--padding-5xl);
   gap: var(--gap-base);
   overflow: auto;
-  height: 300px;
 `;
 const Link = styled.div`
   flex: 1;
@@ -85,6 +84,8 @@ const Container = styled.div`
   justify-content: flex-end;
   overflow-y: scroll;
   height: 100vh;
+  //margin-bottom: 200px;
+  
 `;
 const DesktopDarkModeRoot = styled.div`
   position: relative;
@@ -156,25 +157,38 @@ const DesktopDarkMode = () => {
           <Maykbrito>Description</Maykbrito>
         </Profile>
         
+      {/* <SocialLinks>
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+          <SocialLinksIcon alt="" src="/social-links2.svg" />
+          <SocialLinksIcon alt="" src="/social-links3.svg" />
+          <SocialLinksIcon alt="" src="/social-links.svg" />
+          <SocialLinksIcon alt="" src="/social-links1.svg" />
+        </SocialLinks> */}
+
+        
         <SocialLinks>
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
+        {customLinks.map((customLink) => (
+          <a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
+
+          
+        ))}
         </SocialLinks>
+         
+
+
+
         <Links>
 
           <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
@@ -192,120 +206,9 @@ const DesktopDarkMode = () => {
                    variant="outlined" size="large" color="inherit" >
                     {customLink.title}
                     </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
-                    <Button className="newbutton" 
-                   sx={{ marginBottom: 1,
-                   paddingBottom:2,
-                   paddingTop:2, 
-                   borderRadius: 2,
-                   overflow: 'hidden',
-                   backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href={`${customLink.url}`} target="_blank"
-                   variant="outlined" size="large" color="inherit" >
-                    ksajhdjhsjdhjshd
-                    </Button>
                   </Grid>
                 </Grid>
             ))}
-
           </Grid>
         </Links>
       </Container>
