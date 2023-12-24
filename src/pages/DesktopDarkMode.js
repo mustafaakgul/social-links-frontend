@@ -38,7 +38,7 @@ const SocialLinks = styled.div`
   justify-content: center;
   padding: var(--padding-5xl);
   gap: var(--gap-base);
-  overflow: auto;
+  //overflow: auto;
 `;
 const Link = styled.div`
   flex: 1;
@@ -82,10 +82,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  overflow-y: scroll;
-  height: 100vh;
-  //margin-bottom: 200px;
-  
+  height: 90%;
 `;
 const DesktopDarkModeRoot = styled.div`
   position: relative;
@@ -181,14 +178,9 @@ const DesktopDarkMode = () => {
         <SocialLinks>
         {customLinks.map((customLink) => (
           <a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
-
-          
         ))}
         </SocialLinks>
          
-
-
-
         <Links>
 
           <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
