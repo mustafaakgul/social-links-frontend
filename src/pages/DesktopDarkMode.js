@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/Constants";
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
+import { FullscreenOutlined } from "@mui/icons-material";
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -39,14 +40,25 @@ const SocialLinks = styled.div`
   gap: var(--gap-base);
   overflow: auto;
 `;
-
 const Link = styled.div`
   flex: 1;
   position: relative;
   line-height: 24px;
   font-weight: 500;
 `;
-const Button1 = styled.div`
+const Button3 = styled.div`
+  align-self: stretch;
+  border-radius: var(--br-5xs);
+  background-color: var(--surface-color-dark-mode);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--stroke-color-dark-mode);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-base) var(--padding-5xl);
+`;
+const myCustomButton = styled.div`
   align-self: stretch;
   border-radius: var(--br-5xs);
   background-color: var(--surface-color-dark-mode);
@@ -83,15 +95,15 @@ const Container = styled.div`
   justify-content: flex-end;
 `;
 const DesktopDarkModeRoot = styled.div`
-  position: relative;
+  //position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  //overflow: hidden;
   //background-color: black;
   background-image: url("/desktop--dark-mode@3x.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+  //background-repeat: no-repeat;
+ // background-position: top;
   text-align: left;
   font-size: var(--text-md-size);
   color: var(--text-color-dark-mode);
@@ -175,17 +187,20 @@ const DesktopDarkMode = () => {
         <Links>
 
           <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
-            <Grid item xs={7} sm={7} md={10} lg={12} >
-              <Button1>
-                <Link>Veja meu</Link>
-              </Button1>
-            </Grid>
-
             {customLinks.map((customLink) => (
                 <Grid item xs={7} sm={7} md={10} lg={12} >
-                  <Button1>
-                    <Link>{customLink.title}</Link>
-                  </Button1>
+                  <Grid>
+                   <Button className="newbutton" 
+                   sx={{ marginBottom: 1,
+                   paddingBottom:2,
+                   paddingTop:2, 
+                   borderRadius: 2,
+                   backgroundColor:"rgba(255,255,255,0.1)" }} 
+                   fullWidth href="/new-page" target="_blank" 
+                   variant="outlined" size="large" color="inherit">
+                    {customLink.title}
+                    </Button>
+                  </Grid>
                 </Grid>
             ))}
 
