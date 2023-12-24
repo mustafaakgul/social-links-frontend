@@ -9,6 +9,7 @@ import {
 import {Login} from "./components/Login";
 import {Home} from "./components/Home";
 import {Logout} from './components/Logout';
+import {CreateCustomLink} from './components/CreateCustomLink';
 import Me from "./components/Me";
 import DesktopDarkMode from "./pages/DesktopDarkMode";
 import About from "./components/About";
@@ -52,6 +53,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DesktopDarkMode />} />
+      <Route path="/custom-link/add" element={<CreateCustomLink />} />
       <Route path="/me" element={<Me />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
