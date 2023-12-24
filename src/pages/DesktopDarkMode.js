@@ -196,7 +196,7 @@ const DesktopDarkMode = () => {
                    paddingTop:2, 
                    borderRadius: 2,
                    backgroundColor:"rgba(255,255,255,0.1)" }} 
-                   fullWidth href="/new-page" target="_blank" 
+                   fullWidth href={`${customLink.url}`} target="_blank"
                    variant="outlined" size="large" color="inherit">
                     {customLink.title}
                     </Button>
