@@ -5,6 +5,9 @@ import { API_BASE_URL } from "../utils/Constants";
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
 import { FullscreenOutlined } from "@mui/icons-material";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -153,6 +156,7 @@ const DesktopDarkMode = () => {
           <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
           <Maykbrito>Description</Maykbrito>
         </Profile>
+
         
       {/* <SocialLinks>
           <SocialLinksIcon alt="" src="/social-links.svg" />
@@ -177,7 +181,15 @@ const DesktopDarkMode = () => {
         
         <SocialLinks>
         {customLinks.map((customLink) => (
-          <a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
+          //<a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
+          <a href={`${customLink.url}`} target="_blank" > 
+                {/* <FontAwesomeIcon icon={faPenNib} />
+                <FontAwesomeIcon icon={faEnvelope} /> */}
+                <FontAwesomeIcon className="fa-2xl" icon={faTwitter} />
+          </a>
+
+
+          
         ))}
         </SocialLinks>
          
