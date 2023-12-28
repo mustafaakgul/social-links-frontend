@@ -7,6 +7,9 @@ import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
+import { faGithub, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+
+
 
 
 const AvatarIcon = styled.img`
@@ -174,8 +177,8 @@ const DesktopDarkMode = () => {
         <FontAwesomeIcon icon={icon({name: 'twitter', style: 'brands', family: 'classic'})} size="2xl" /> 
         <FontAwesomeIcon icon={icon({name: 'facebook', style: 'brands', family: 'classic'})}  size="2xl" /> 
         <FontAwesomeIcon icon={icon({name: 'twitch', style: 'brands', family: 'classic'})}  size="2xl" /> 
-
-      
+        <FontAwesomeIcon icon="fa-brands fa-github" />
+        <FontAwesomeIcon icon={faGithub} />
 
         <Links>
 
