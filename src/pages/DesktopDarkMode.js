@@ -4,9 +4,9 @@ import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/Constants";
 import axios from 'axios';
 import Grid from '@mui/material/Grid';
-import { FullscreenOutlined } from "@mui/icons-material";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
+
 
 
 const AvatarIcon = styled.img`
@@ -156,43 +156,27 @@ const DesktopDarkMode = () => {
           <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
           <Maykbrito>Description</Maykbrito>
         </Profile>
-
-        
-      {/* <SocialLinks>
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-          <SocialLinksIcon alt="" src="/social-links2.svg" />
-          <SocialLinksIcon alt="" src="/social-links3.svg" />
-          <SocialLinksIcon alt="" src="/social-links.svg" />
-          <SocialLinksIcon alt="" src="/social-links1.svg" />
-        </SocialLinks> */}
-
+   
         
         <SocialLinks>
         {customLinks.map((customLink) => (
           //<a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
           <a href={`${customLink.url}`} target="_blank" > 
-                {/* <FontAwesomeIcon icon={faPenNib} />
-                <FontAwesomeIcon icon={faEnvelope} /> */}
-                <FontAwesomeIcon className="fa-2xl" icon={faTwitter} />
+
           </a>
 
 
           
         ))}
         </SocialLinks>
-         
+
+
+        <FontAwesomeIcon icon={icon({name: 'twitter', style: 'brands', family: 'classic'})} size="2xl" /> 
+        <FontAwesomeIcon icon={icon({name: 'facebook', style: 'brands', family: 'classic'})}  size="2xl" /> 
+        <FontAwesomeIcon icon={icon({name: 'twitch', style: 'brands', family: 'classic'})}  size="2xl" /> 
+
+      
+
         <Links>
 
           <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
