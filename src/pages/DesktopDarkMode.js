@@ -9,13 +9,14 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 import { faGithub, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 
-
+import { Container } from "@mui/material";
 
 
 const AvatarIcon = styled.img`
   position: relative;
-  width: 112px;
-  height: 112px;
+  width: 25%;
+  height: auto;
+  margin-top: 5%;
 `;
 const Maykbrito = styled.div`
   position: relative;
@@ -30,40 +31,40 @@ const Profile = styled.div`
   padding: var(--padding-5xl);
   gap: 8px;
 `;
-const SocialLinksIcon = styled.img`
-  position: relative;
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-`;
-const SocialLinks = styled.div`
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: var(--padding-5xl);
-  gap: var(--gap-base);
-  //overflow: auto;
-`;
+// const SocialLinksIcon = styled.img`
+//   position: relative;
+//   width: 40px;
+//   height: 40px;
+//   object-fit: cover;
+// `;
+// const SocialLinks = styled.div`
+//   align-self: stretch;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: flex-start;
+//   justify-content: center;
+//   padding: var(--padding-5xl);
+//   gap: var(--gap-base);
+//   overflow: auto;
+// `;
 const Link = styled.div`
   flex: 1;
   position: relative;
   line-height: 24px;
   font-weight: 500;
 `;
-const Button3 = styled.div`
-  align-self: stretch;
-  border-radius: var(--br-5xs);
-  background-color: var(--surface-color-dark-mode);
-  backdrop-filter: blur(8px);
-  border: 1px solid var(--stroke-color-dark-mode);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) var(--padding-5xl);
-`;
+// const Button3 = styled.div`
+//   align-self: stretch;
+//   border-radius: var(--br-5xs);
+//   background-color: var(--surface-color-dark-mode);
+//   backdrop-filter: blur(8px);
+//   border: 1px solid var(--stroke-color-dark-mode);
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   padding: var(--padding-base) var(--padding-5xl);
+// `;
 
 const Button2 = styled(Button)`
   align-self: stretch;
@@ -77,32 +78,17 @@ const Links = styled.div`
   padding: var(--padding-5xl);
   gap: var(--gap-base);
   text-align: center;
-  overflow-y: auto;
+  //overflow-y: auto;
 `;
-const Container = styled.div`
-  position: absolute;
-  top: 56px;
-  left: calc(50% - 294px);
-  width: 588px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 90%;
-`;
+
 const DesktopDarkModeRoot = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
   background-image: url("/desktop--dark-mode@3x.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  text-align: left;
-  font-size: var(--text-md-size);
   color: var(--text-color-dark-mode);
-  font-family: var(--text-md);
+  top: 56px;
+
 `;
 
 
@@ -153,7 +139,8 @@ const DesktopDarkMode = () => {
 
   return (
     <DesktopDarkModeRoot>
-      <Container>
+      
+       <Container maxWidth="sm" textAlign='center'>
         <Profile>
           <AvatarIcon alt="" src="/themedark-mode.svg" />
           <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
@@ -161,30 +148,27 @@ const DesktopDarkMode = () => {
         </Profile>
    
         
-        <SocialLinks>
+        {/* <SocialLinks>
         {customLinks.map((customLink) => (
           //<a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
           <a href={`${customLink.url}`} target="_blank" > 
-
-          </a>
-
-
-          
+          </a>          
         ))}
-        </SocialLinks>
+        </SocialLinks> */}
 
-
-        <FontAwesomeIcon icon={icon({name: 'twitter', style: 'brands', family: 'classic'})} size="2xl" /> 
-        <FontAwesomeIcon icon={icon({name: 'facebook', style: 'brands', family: 'classic'})}  size="2xl" /> 
-        <FontAwesomeIcon icon={icon({name: 'twitch', style: 'brands', family: 'classic'})}  size="2xl" /> 
-        <FontAwesomeIcon icon="fa-brands fa-github" />
-        <FontAwesomeIcon icon={faGithub} />
+        <p align="center">
+          {/* Dynamic import */}
+          <FontAwesomeIcon icon={icon({name: 'twitter', style: 'brands', family: 'classic'})} size="2xl" sx=""/> 
+          <FontAwesomeIcon icon={icon({name: 'facebook', style: 'brands', family: 'classic'})}  size="2xl" /> 
+          <FontAwesomeIcon icon={icon({name: 'twitch', style: 'brands', family: 'classic'})}  size="2xl" /> 
+          {/* individual import */}
+          <FontAwesomeIcon icon={faGithub} size="2xl"/>
+        </p>
 
         <Links>
-
-          <Grid container spacing={2} alignItems="center" display="flex" justifyContent="center" >
+          <Grid container spacing={2} display="flex" >
             {customLinks.map((customLink) => (
-                <Grid item xs={7} sm={7} md={10} lg={12} >
+                <Grid item xs={12} sm={12} md={12} lg={12} >
                   <Grid>
                    <Button className="newbutton" 
                    sx={{ marginBottom: 1,
