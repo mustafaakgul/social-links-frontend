@@ -31,22 +31,7 @@ const Profile = styled.div`
   padding: var(--padding-5xl);
   gap: 8px;
 `;
-// const SocialLinksIcon = styled.img`
-//   position: relative;
-//   width: 40px;
-//   height: 40px;
-//   object-fit: cover;
-// `;
-// const SocialLinks = styled.div`
-//   align-self: stretch;
-//   display: flex;
-//   flex-direction: row;
-//   align-items: flex-start;
-//   justify-content: center;
-//   padding: var(--padding-5xl);
-//   gap: var(--gap-base);
-//   overflow: auto;
-// `;
+
 const Link = styled.div`
   flex: 1;
   position: relative;
