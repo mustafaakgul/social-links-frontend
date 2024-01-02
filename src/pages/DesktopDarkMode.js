@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-import { faGithub, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import { Container } from "@mui/material";
 
@@ -53,18 +53,7 @@ const Link = styled.div`
   line-height: 24px;
   font-weight: 500;
 `;
-// const Button3 = styled.div`
-//   align-self: stretch;
-//   border-radius: var(--br-5xs);
-//   background-color: var(--surface-color-dark-mode);
-//   backdrop-filter: blur(8px);
-//   border: 1px solid var(--stroke-color-dark-mode);
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   justify-content: center;
-//   padding: var(--padding-base) var(--padding-5xl);
-// `;
+
 
 const Button2 = styled(Button)`
   align-self: stretch;
@@ -140,21 +129,13 @@ const DesktopDarkMode = () => {
   return (
     <DesktopDarkModeRoot>
       
-       <Container maxWidth="sm" textAlign='center'>
+       <Container maxWidth="sm" >
         <Profile>
           <AvatarIcon alt="" src="/themedark-mode.svg" />
           <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
           <Maykbrito>Description</Maykbrito>
         </Profile>
    
-        
-        {/* <SocialLinks>
-        {customLinks.map((customLink) => (
-          //<a href={`${customLink.url}`} target="_blank" > <SocialLinksIcon alt="" src="/social-links.svg" /></a>
-          <a href={`${customLink.url}`} target="_blank" > 
-          </a>          
-        ))}
-        </SocialLinks> */}
 
         <p align="center">
           {/* Dynamic import */}
@@ -168,7 +149,7 @@ const DesktopDarkMode = () => {
         <Links>
           <Grid container spacing={2} display="flex" >
             {customLinks.map((customLink) => (
-                <Grid item xs={12} sm={12} md={12} lg={12} >
+                <Grid item xs={12} sm={12} md={12} lg={12} key={customLink.id} >
                   <Grid>
                    <Button className="newbutton" 
                    sx={{ marginBottom: 1,

@@ -53,7 +53,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DesktopDarkMode />} />
-      <Route path="/custom-link/add" element={<CreateCustomLink />} />
+     {/* <Route path="/custom-link/add" element={<CreateCustomLink />} /> */}
       <Route path="/me" element={<Me />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
