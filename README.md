@@ -1,11 +1,3 @@
-## Main
-* asd
-* 234
-
-### Features
-* Tek Renk Background
-* Geçişli Renk Background
-
 ### Naming Conventions
 * Pascal case for both file names, and component names
 * Folder names should be all lowercase
