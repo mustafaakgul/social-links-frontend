@@ -9,10 +9,11 @@ import {
 import {Login} from "./components/Login";
 import {Home} from "./components/Home";
 import {Logout} from './components/Logout';
-import {CreateCustomLink} from './components/CreateCustomLink';
+
 import Me from "./components/Me";
 import DesktopDarkMode from "./pages/DesktopDarkMode";
 import About from "./components/About";
+import CreateCustomLink from "./pages/CreateCustomLink";
 
 function App() {
   const action = useNavigationType();
@@ -53,12 +54,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<DesktopDarkMode />} />
-     {/* <Route path="/custom-link/add" element={<CreateCustomLink />} /> */}
       <Route path="/me" element={<Me />} />
       <Route path="/home" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
+      <Route path="/createcustomlink" element={<CreateCustomLink />} />
     </Routes>
   );
 

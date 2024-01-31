@@ -3,6 +3,17 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
     body {
       margin: 0; line-height: normal;
+      background-image: url("/desktop--dark-mode@3x.png");
+
+      color: var(--text-color-dark-mode);
+      top: 56px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }
+
+    html{
+      height: -webkit-fill-available;
     }
 :root {
 

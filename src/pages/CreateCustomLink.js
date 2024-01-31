@@ -64,7 +64,7 @@ const DesktopDarkModeRoot = styled.div`
 `;
 
 
-const DesktopDarkMode = () => {
+const CreateCustomLink = () => {
 
   const [message, setMessage] = useState('')
   const [customLinks, setCustomLinks] = useState([])
@@ -111,43 +111,6 @@ const DesktopDarkMode = () => {
         setError(error);
         console.log(error);
       });
-
-    // TAGS
-    axios.get(`${API_BASE_URL}links/tags`, {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
-        'Content-Type': 'application/json',
-      }
-    })
-      .then(response => {
-        console.log(response.data);
-        setTags(response.data.results);
-        console.log(tags);
-      })
-      .catch(error => {
-        setError(error);
-        console.log(error);
-      });
-
-
-
-    // // Social Network
-    // axios.get(`${API_BASE_URL}links/socialnetwork`, {
-    //   headers: {
-    //     'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
-    //     'Content-Type': 'application/json',
-    //   }
-    // })
-    //   .then(response => {
-    //     console.log(response.data);
-    //     setSocialnetworks(response.data.results);
-    //     console.log(socialnetworks);
-    //   })
-    //   .catch(error => {
-    //     setError(error);
-    //     console.log(error);
-    //   });
-
 
 
 
@@ -290,4 +253,4 @@ const DesktopDarkMode = () => {
   );
 };
 
-export default DesktopDarkMode;
+export default CreateCustomLink;
