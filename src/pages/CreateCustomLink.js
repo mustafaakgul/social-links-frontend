@@ -9,7 +9,8 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container } from "@mui/material";
 import Typography from '@mui/material/Typography';
-
+import Stack from '@mui/material/Stack';
+import Item from '@mui/material/Stack';
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -66,147 +67,152 @@ const DesktopDarkModeRoot = styled.div`
 
 const CreateCustomLink = () => {
 
-  const [message, setMessage] = useState('')
-  const [customLinks, setCustomLinks] = useState([])
-  const [links, setLinks] = useState([])
-  const [tags, setTags] = useState([])
-  const [socialnetworks, setSocialnetworks] = useState([])
-  const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
-  const [error, setError] = useState(null);
+    const [message, setMessage] = useState('')
+    const [customLinks, setCustomLinks] = useState([])
+    const [links, setLinks] = useState([])
+    const [tags, setTags] = useState([])
+    const [socialnetworks, setSocialnetworks] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState({});
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    setLoading(true);
-    axios.get(`${API_BASE_URL}accounts/me`, {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
-        'Content-Type': 'application/json',
-      }
-    })
-      .then(response => {
-        setMessage(response.data);
-        setLinks(response.data.profile.links)
-        console.log(response.data);
-        console.log(links);
-      })
-      .catch(error => {
-        setError(error);
-        console.log(error);
-      });
-
-
-    // CUSTOMLİNKS
-    axios.get(`${API_BASE_URL}links/custom-links`, {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
-        'Content-Type': 'application/json',
-      }
-    })
-      .then(response => {
-        console.log(response.data);
-        setCustomLinks(response.data.results);
-        console.log(customLinks);
-      })
-      .catch(error => {
-        setError(error);
-        console.log(error);
-      });
+    useEffect(() => {
+        setLoading(true);
+        axios.get(`${API_BASE_URL}accounts/me`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => {
+                setMessage(response.data);
+                setLinks(response.data.profile.links)
+                console.log(response.data);
+                console.log(links);
+            })
+            .catch(error => {
+                setError(error);
+                console.log(error);
+            });
 
 
-
-  }, []);
-
-
-  const handleLogout = () => {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("user");
-    window.location.href = "/login";
-  };
+        // CUSTOMLİNKS
+        axios.get(`${API_BASE_URL}links/custom-links`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => {
+                console.log(response.data);
+                setCustomLinks(response.data.results);
+                console.log(customLinks);
+            })
+            .catch(error => {
+                setError(error);
+                console.log(error);
+            });
 
 
 
+    }, []);
 
 
-
-  return (
-    <DesktopDarkModeRoot>
-
-      <Container maxWidth="sm" >
-        <Profile>
-          <AvatarIcon alt="" src="/themedark-mode.svg" />
-          <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
-          <Maykbrito>Description</Maykbrito>
-          <Button variant="contained" onClick={handleLogout}>Logout</Button>
-        </Profile>
-
-
-        <p align="center">
-          {/* Dynamic import */}
-          <FontAwesomeIcon icon={icon({ name: 'twitter', style: 'brands', family: 'classic' })} size="2xl" sx="" />
-          <FontAwesomeIcon icon={icon({ name: 'facebook', style: 'brands', family: 'classic' })} size="2xl" />
-          <FontAwesomeIcon icon={icon({ name: 'twitch', style: 'brands', family: 'classic' })} size="2xl" />
-          {/* individual import */}
-          <FontAwesomeIcon icon={faGithub} size="2xl" />
-        </p>
-
-
-        <Typography>Custom Links</Typography>
-        <Links>
-          <Grid container spacing={2} display="flex" >
-            {customLinks.map((customLink) => (
-              <Grid item xs={12} sm={12} md={12} lg={12} key={customLink.id} >
-                <Grid>
-                  <Button className="newbutton"
-                    sx={{
-                      marginBottom: 1,
-                      paddingBottom: 2,
-                      paddingTop: 2,
-                      borderRadius: 2,
-                      overflow: 'hidden',
-                      backgroundColor: "rgba(255,255,255,0.1)"
-                    }}
-                    fullWidth href={`${customLink.url}`} target="_blank"
-                    variant="outlined" size="large" color="inherit" >
-                    {customLink.title}
-                  </Button>
-                </Grid>
-              </Grid>
-            ))}
-          </Grid>
-        </Links>
-
-
-        <Typography>TAGS</Typography>
-        <Links>
-          <Grid container spacing={2} display="flex" >
-            {tags.map((tags) => (
-              <Grid item xs={12} sm={12} md={12} lg={12} key={tags.id} >
-                <Grid>
-                  <Button className="newbutton"
-                    sx={{
-                      marginBottom: 1,
-                      paddingBottom: 2,
-                      paddingTop: 2,
-                      borderRadius: 2,
-                      overflow: 'hidden',
-                      backgroundColor: "rgba(255,255,255,0.1)"
-                    }}
-                    fullWidth href={`${tags.url}`} target="_blank"
-                    variant="outlined" size="large" color="inherit" >
-                    {tags.name}
-                  </Button>
-                </Grid>
-              </Grid>
-            ))}
-          </Grid>
-        </Links>
+    const handleLogout = () => {
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+    };
 
 
 
 
 
 
-{/* 
+    return (
+        <DesktopDarkModeRoot>
+
+            <Container maxWidth="sm" >
+                <Profile>
+                    <AvatarIcon alt="" src="/themedark-mode.svg" />
+                    <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
+                    <Maykbrito>Description</Maykbrito>
+                    <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
+                        <Item> <Button variant="contained" onClick={handleLogout}>Logout</Button></Item>
+
+                    </Stack>
+
+
+                </Profile>
+
+
+                <p align="center">
+                    {/* Dynamic import */}
+                    <FontAwesomeIcon icon={icon({ name: 'twitter', style: 'brands', family: 'classic' })} size="2xl" sx="" />
+                    <FontAwesomeIcon icon={icon({ name: 'facebook', style: 'brands', family: 'classic' })} size="2xl" />
+                    <FontAwesomeIcon icon={icon({ name: 'twitch', style: 'brands', family: 'classic' })} size="2xl" />
+                    {/* individual import */}
+                    <FontAwesomeIcon icon={faGithub} size="2xl" />
+                </p>
+
+
+                <Typography>Custom Links</Typography>
+                <Links>
+                    <Grid container spacing={2} display="flex" >
+                        {customLinks.map((customLink) => (
+                            <Grid item xs={12} sm={12} md={12} lg={12} key={customLink.id} >
+                                <Grid>
+                                    <Button className="newbutton"
+                                        sx={{
+                                            marginBottom: 1,
+                                            paddingBottom: 2,
+                                            paddingTop: 2,
+                                            borderRadius: 2,
+                                            overflow: 'hidden',
+                                            backgroundColor: "rgba(255,255,255,0.1)"
+                                        }}
+                                        fullWidth href={`${customLink.url}`} target="_blank"
+                                        variant="outlined" size="large" color="inherit" >
+                                        {customLink.title}
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Links>
+
+
+                <Typography>TAGS</Typography>
+                <Links>
+                    <Grid container spacing={2} display="flex" >
+                        {tags.map((tags) => (
+                            <Grid item xs={12} sm={12} md={12} lg={12} key={tags.id} >
+                                <Grid>
+                                    <Button className="newbutton"
+                                        sx={{
+                                            marginBottom: 1,
+                                            paddingBottom: 2,
+                                            paddingTop: 2,
+                                            borderRadius: 2,
+                                            overflow: 'hidden',
+                                            backgroundColor: "rgba(255,255,255,0.1)"
+                                        }}
+                                        fullWidth href={`${tags.url}`} target="_blank"
+                                        variant="outlined" size="large" color="inherit" >
+                                        {tags.name}
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Links>
+
+
+
+
+
+
+                {/* 
 
 
 
@@ -248,9 +254,9 @@ const CreateCustomLink = () => {
 
 
 
-      </Container>
-    </DesktopDarkModeRoot>
-  );
+            </Container>
+        </DesktopDarkModeRoot>
+    );
 };
 
 export default CreateCustomLink;

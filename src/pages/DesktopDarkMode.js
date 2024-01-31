@@ -9,7 +9,9 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Container } from "@mui/material";
 import Typography from '@mui/material/Typography';
-
+import Stack from '@mui/material/Stack';
+import Item from '@mui/material/Stack';
+import { useNavigate } from "react-router-dom";
 
 const AvatarIcon = styled.img`
   position: relative;
@@ -165,6 +167,13 @@ const DesktopDarkMode = () => {
 
 
 
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `createcustomlink`; 
+    navigate(path);
+  }
+
+
   return (
     <DesktopDarkModeRoot>
 
@@ -173,7 +182,11 @@ const DesktopDarkMode = () => {
           <AvatarIcon alt="" src="/themedark-mode.svg" />
           <Maykbrito>@{message.first_name} {message.last_name}</Maykbrito>
           <Maykbrito>Description</Maykbrito>
-          <Button variant="contained" onClick={handleLogout}>Logout</Button>
+          <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
+              <Item> <Button variant="contained" onClick={handleLogout}>Logout</Button></Item>
+              <Item> <Button variant="contained"  onClick={routeChange}>Edit</Button></Item>
+
+          </Stack>
         </Profile>
 
 
