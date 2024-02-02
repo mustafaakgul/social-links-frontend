@@ -21,6 +21,7 @@ import { Container } from "@mui/material";
 
 
 
+
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
@@ -47,13 +48,13 @@ export const Login = () => {
         localStorage.setItem('access_token', data.access);
         localStorage.setItem('refresh_token', data.refresh);
         axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
-        window.location.href = '/'
+        window.location.href = '/linkprofilepage'
 
     }
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
+            <Grid container component="main">
                 <CssBaseline />
                 <Grid
                     item
@@ -61,12 +62,10 @@ export const Login = () => {
                     sm={12}
                     md={12}
                     sx={{
-                        backgroundImage: 'url("/desktop--dark-mode@3x.png")',
                         backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
+                        marginTop: '20%',
                     }}
                 >
                     <Container maxWidth="sm" >
@@ -82,7 +81,10 @@ export const Login = () => {
                                     value={username}
                                     onChange={e => setUsername(e.target.value)}
                                     autoFocus
+                                    sx={{ backgroundColor: 'white' }}
                                 />
+                                
+                                
                                 <label
                                  sx={{
                                     color: 'text.primary',
@@ -99,10 +101,12 @@ export const Login = () => {
                                     value={password}
                                     onChange={e => setPassword(e.target.value)}
                                     autoComplete="current-password"
+                                    sx={{ backgroundColor: 'white' }}
                                 />
                                 <FormControlLabel
-                                    control={<Checkbox value="remember" color="primary" />}
+                                    control={<Checkbox value="remember" sx={{ color: 'white' }}/>}
                                     label="Remember me"
+
                                     
                                 />
                                 <Button
@@ -127,12 +131,12 @@ export const Login = () => {
                                 </Button>
                                 <Grid container>
                                     <Grid item xs>
-                                        <Link href="#" variant="body2">
+                                        <Link href="#" variant="body2" sx={{ color: 'white' }}>
                                             Forgot password?
                                         </Link>
                                     </Grid>
                                     <Grid item>
-                                        <Link href="#" variant="body2">
+                                        <Link href="#" variant="body2" sx={{ color: 'white' }}>
                                             {"Don't have an account? Sign Up"}
                                         </Link>
                                     </Grid>

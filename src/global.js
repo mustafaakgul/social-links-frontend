@@ -10,11 +10,10 @@ export default createGlobalStyle`
         background-repeat: no-repeat;
         background-size: cover;
         height: 100%;
+        min-height: 100vh;
     }
 
-    html{
-      height: -webkit-fill-available;
-    }
+
 :root {
 
 /* fonts */

@@ -66,7 +66,7 @@ const DesktopDarkModeRoot = styled.div`
 `;
 
 
-const DesktopDarkMode = () => {
+const LinkProfilePage = () => {
 
   const [message, setMessage] = useState('')
   const [customLinks, setCustomLinks] = useState([])
@@ -159,7 +159,7 @@ const DesktopDarkMode = () => {
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("user");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
 
@@ -303,4 +303,4 @@ const DesktopDarkMode = () => {
   );
 };
 
-export default DesktopDarkMode;
+export default LinkProfilePage;
